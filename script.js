@@ -6,21 +6,34 @@ const image2 = document.getElementById("image2");
 const image3 = document.getElementById("image3");
 const textBox = document.getElementById("text-box");
 
+// Dark or light images
+function imageMode(color) {
+  image1.src = `./img/undraw_proud_coder_${color}.svg`;
+  image2.src = `./img//undraw_feeling_proud_${color}.svg`;
+  image3.src = `./img/undraw_conceptual_idea_${color}.svg`;
+}
+
 // darkMode styles
 function darkMode() {
   nav.style.backgroundColor = "rgb(0 0 0 / 50%)";
   textBox.style.backgroundColor = "rgb(255 255 255 / 50%)";
   toggleIcon.children[0].textContent = "Dark Mode";
-  toggleIcon.children[1].classList.remove("fa-sun");
-  toggleIcon.children[1].classList.add("fa-moon");
-  image1.src = "./img/undraw_proud_coder_dark.svg";
-  image2.src = "./img//undraw_feeling_proud_dark.svg";
-  image3.src = "./img/undraw_conceptual_idea_dark.svg";
+  toggleIcon.children[1].classList.replace("fa-sun", "fa-moon");
+  imageMode("dark");
+}
+
+// light mode styles
+function lightMode() {
+  nav.style.backgroundColor = "rgb(255 255 255 / 50%)";
+  textBox.style.backgroundColor = "rgb(0 0 0 / 50%)";
+  toggleIcon.children[0].textContent = "Light Mode";
+    toggleIcon.children[1].classList.replace("fa-moon", "fa-sun");
+     imageMode("light");
 }
 
 //Switch Theme Dynamically
 function switchTheme(e) {
-  if (e.target.checked === true) {
+  if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     darkMode();
   } else {
