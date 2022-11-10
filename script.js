@@ -34,19 +34,20 @@ function switchTheme(e) {
     localStorage.setItem("theme", "dark");
     toggleDarkLightMode(true);
   } else {
-    document.documentElement.setAttribute("date-theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
     toggleDarkLightMode(false);
   }
 }
 
-// Event listener
+// Event Listener
 toggleSwitch.addEventListener("change", switchTheme);
 
-// check theme from local storage
+// Check Local Storage For Theme
 const currentTheme = localStorage.getItem("theme");
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
+
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
     toggleDarkLightMode(true);
