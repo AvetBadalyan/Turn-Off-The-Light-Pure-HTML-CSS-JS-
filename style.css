@@ -25,6 +25,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* background color is taken from https://heropatterns.com/ */
 
 body {
@@ -49,6 +53,34 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: normal;
+
+  color: var(--on-background-alt);
+}
+
+/* Navigation */
+nav {
+  z-index: 10;
+  position: fixed;
+  font-size: 24px;
+  letter-spacing: 3px;
+  padding: 25px;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: sans-serif;
+}
+
+a {
+  margin-right: 25px;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  color: var(--on-background);
+  border-bottom: 3px solid;
 }
 
 /* Home Section */
@@ -59,4 +91,31 @@ h2 {
 /* About Section */
 .about-container {
   display: flex;
+}
+
+/* https://undraw.co/illustrations */
+
+/* Home Section */
+.title-group {
+  text-align: center;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+}
+
+.image-container {
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-right: 25px;
+  width: auto;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+}
+
+img {
+  height: 300px;
+  width: 300px;
 }
