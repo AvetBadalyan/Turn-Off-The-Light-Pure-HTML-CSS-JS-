@@ -5,6 +5,6 @@ With Mobile adaptation
 
 Go to WEBSITE of Turn Off the light [https://turn-off-the-light-d90ff.web.app/](https://turn-off-the-light-d90ff.web.app/) <br />
 
-![screenshot](./screenshots/light.jpg)
-![screenshot](./screenshots/dark.jpg)
-![screenshot](./screenshots/mob.jpg)
+![screenshot](./public/screenshots/light.jpg)
+![screenshot](./public/screenshots/dark.jpg)
+![screenshot](./public/screenshots/mob.jpg)
