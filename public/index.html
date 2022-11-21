@@ -12,27 +12,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  
     <!-- Navigation -->
     <nav id="nav">
-    <div class="nav-links">
+      <div class="nav-links">
         <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
-    </div>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
 
-        <!-- Dark Mode Switch -->
-    <div class="theme-switch-wrapper">
-      <span id="toggle-icon">
-        <span class="toggle-text">Light Mode</span>
-        <i class="fas fa-sun"></i>
-      </span>
-      <label class="theme-switch">
-        <input type="checkbox" />
-        <div class="slider round"></div>
-      </label>
-    </div>
+      <!-- Dark Mode Switch -->
+      <div class="theme-switch-wrapper">
+        <span id="toggle-icon">
+          <span class="toggle-text">Light Mode</span>
+          <i class="fas fa-sun"></i>
+        </span>
+        <label class="theme-switch">
+          <input type="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
     </nav>
     <!-- Home Section -->
     <section id="home">
@@ -107,5 +106,25 @@
 
     <!-- Script -->
     <script src="script.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCZomHMYlPM6-AVxFwozqJtePzQnWa4Yk0",
+        authDomain: "turn-off-the-light-d90ff.firebaseapp.com",
+        projectId: "turn-off-the-light-d90ff",
+        storageBucket: "turn-off-the-light-d90ff.appspot.com",
+        messagingSenderId: "8885731138",
+        appId: "1:8885731138:web:ba46a2978c301eb0e7d2db",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>
