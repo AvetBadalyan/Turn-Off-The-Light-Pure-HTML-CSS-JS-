@@ -23,10 +23,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* background color is taken from https://heropatterns.com/ */
@@ -46,32 +48,36 @@ section {
 }
 
 h1 {
-  font-size: 100px;
-  margin-bottom: 0;
+  font-size: 4.5rem;
+  margin-bottom: 10px auto;
   font-style: italic;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: normal;
 
   color: var(--on-background-alt);
 }
 
 /* Navigation */
-nav {
-  z-index: 10;
-  position: fixed;
-  font-size: 24px;
-  letter-spacing: 3px;
+#nav {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
   padding: 25px;
-  width: 100vw;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
   font-family: sans-serif;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 a {
-  margin-right: 25px;
+  margin-right: 20px;
   color: var(--primary-color);
   text-decoration: none;
   border-bottom: 3px solid transparent;
@@ -90,8 +96,17 @@ a:focus {
 }
 
 /* About Section */
+#about {
+  text-align: center;
+}
+
 .about-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
 }
 
 /* https://undraw.co/illustrations */
@@ -100,7 +115,6 @@ a:focus {
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   padding: 10px 20px;
-  margin-right: 25px;
   width: auto;
   background: var(--background);
   box-shadow: var(--box-shadow);
@@ -115,6 +129,11 @@ img {
 .buttons {
   margin-top: 15px;
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 button {
@@ -122,7 +141,6 @@ button {
   height: 40px;
   cursor: pointer;
   border-radius: 10px;
-  margin-right: 10px;
   border: 2px solid var(--primary-color);
   font-size: 15px;
   outline: none;
@@ -172,15 +190,9 @@ button:hover:not(.outline) {
   padding: 30px;
 }
 
-p {
-  margin: 0;
-  line-height: 25px;
-}
-
 /* Contact Section */
 .fab {
   font-size: 100px;
-  margin-right: 50px;
   cursor: pointer;
   color: var(--primary-color);
 }
@@ -189,25 +201,28 @@ p {
   color: var(--on-background);
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.social-icons i {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+}
+
 /* Dark Mode Toggle */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  z-index: 100;
-  position: fixed;
-  right: 25px;
-  top: 30px;
-}
-
-.theme-switch-wrapper span {
-  margin-right: 10px;
-  font-size: 1rem;
+  justify-content: flex-end;
 }
 
 .toggle-text {
-  position: relative;
-  top: -4px;
-  right: 5px;
   color: var(--on-background);
 }
 
@@ -263,4 +278,32 @@ input:checked + .slider::before {
 .fas {
   font-size: 30px;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .theme-switch-wrapper,
+  .nav-links {
+    width: 100%;
+  }
+
+  section {
+    min-height: 60vh;
+  }
+
+  .social-icons {
+    width: 60%;
+  }
+
+  .buttons,
+  .text-box {
+    width: 85%;
+  }
+
+  .title-group {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
 }
